@@ -37,6 +37,13 @@ summarise(flights, avg = mean(delayed_in_air, na.rm = TRUE))
 to_sea <- filter(flights,dest == "SEA")
 to_sea <- select(to_sea, origin, dest, delayed_in_air)
 
+#pipe practice
+flights %>% 
+  filter(dest == "SEA") %>% 
+  #select(origin, dest, delayed_in_air) %>% 
+  summarise(avg_delayed = mean(delayed_in_air, na.rm = TRUE)) %>% 
+  pull(avg_delayed)
+
 # On average, did flights to SeaTac gain or loose time?
 summarise(to_sea, avg_delayed = mean(delayed_in_air, na.rm = TRUE))
 View(to_sea)
