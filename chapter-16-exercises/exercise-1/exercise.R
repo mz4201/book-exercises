@@ -2,7 +2,7 @@
 
 # Install and load the `ggplot2` package
 # You will also want to load `dplyr`
-install.packages("ggplot2")
+#install.packages("ggplot2")
 library(ggplot2)
 library(dplyr)
 # For this exercise you'll be working with the `diamonds` data set included in 
